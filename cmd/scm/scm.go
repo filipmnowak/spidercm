@@ -25,7 +25,6 @@ func Init() {
 		fmt.Printf("%s\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("%s\n", scmCmd.Results)
 }
 
 func NewCommitCmd() *cobra.Command {
@@ -48,7 +47,6 @@ func Commit(cmd *cobra.Command) {
 		fmt.Printf("%s\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("%s\n", scmCmd.Results)
 }
 
 func NewAddCmd() *cobra.Command {
@@ -71,5 +69,4 @@ func Add(cmd *cobra.Command) {
 		fmt.Printf("%s\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("%s\n", scmCmd.Results)
 }

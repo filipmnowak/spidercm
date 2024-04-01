@@ -3,7 +3,6 @@ package scm
 import (
 	"os/exec"
 	"sync"
-	"fmt"
 )
 
 const (
@@ -54,9 +53,6 @@ func (scm *SCM) setCommands(action string) {
 
 func (scm *SCM) runAction(action string) error {
 	scm.setCommands(action)
-	for _, e := range scm.ToRun {
-		fmt.Printf("%s\n", e)
-	}
 	var channels []<-chan SCMResult
 	for _, a := range scm.ToRun {
 		channels = append(channels, gorountineWrapper(a))
